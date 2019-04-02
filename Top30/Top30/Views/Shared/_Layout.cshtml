@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -20,9 +21,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @foreach (Model.MenuViewModel menu in (List<Model.MenuViewModel>)ViewBag.MenuList)
+                    {
+                        <li>@Html.ActionLink(menu.Name, menu.Action, menu.Controller)</li>
+                    }
                 </ul>
             </div>
         </div>

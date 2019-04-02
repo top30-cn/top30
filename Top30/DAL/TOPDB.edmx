@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TOPDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TOPDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'TOPDB.dbo.T_Menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="T_Menu">
@@ -24,6 +24,8 @@ warning 6002: The table/view 'TOPDB.dbo.T_Menu' does not have a primary key defi
           <Property Name="ParentCode" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="MenuLevel" Type="int" />
           <Property Name="BussType" Type="varchar" MaxLength="8" />
+          <Property Name="Controller" Type="varchar" MaxLength="48" />
+          <Property Name="Action" Type="varchar" MaxLength="48" />
         </EntityType>
         <EntityContainer Name="TOPDBModelStoreContainer">
           <EntitySet Name="T_Menu" EntityType="Self.T_Menu" store:Type="Tables" store:Schema="dbo">
@@ -36,12 +38,13 @@ warning 6002: The table/view 'TOPDB.dbo.T_Menu' does not have a primary key defi
     [T_Menu].[UpdateTime] AS [UpdateTime], 
     [T_Menu].[ParentCode] AS [ParentCode], 
     [T_Menu].[MenuLevel] AS [MenuLevel], 
-    [T_Menu].[BussType] AS [BussType]
+    [T_Menu].[BussType] AS [BussType], 
+    [T_Menu].[Controller] AS [Controller], 
+    [T_Menu].[Action] AS [Action]
     FROM [dbo].[T_Menu] AS [T_Menu]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TOPDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -62,6 +65,8 @@ warning 6002: The table/view 'TOPDB.dbo.T_Menu' does not have a primary key defi
           <Property Name="ParentCode" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MenuLevel" Type="Int32" />
           <Property Name="BussType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Controller" Type="String" MaxLength="48" FixedLength="false" Unicode="false" />
+          <Property Name="Action" Type="String" MaxLength="48" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="TOPDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="T_Menu" EntityType="Self.T_Menu" />
@@ -75,6 +80,8 @@ warning 6002: The table/view 'TOPDB.dbo.T_Menu' does not have a primary key defi
           <EntitySetMapping Name="T_Menu">
             <EntityTypeMapping TypeName="TOPDBModel.T_Menu">
               <MappingFragment StoreEntitySet="T_Menu">
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Controller" ColumnName="Controller" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Code" ColumnName="Code" />

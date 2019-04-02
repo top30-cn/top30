@@ -18,7 +18,9 @@ namespace Model
             UpdateTime = t.UpdateTime;
             ParentCode = t.ParentCode;
             MenuLevel = t.MenuLevel;
-            BussType = t.BussType;   
+            BussType = t.BussType;
+            Controller = t.Controller;
+            Action = t.Action;
         }
         public MenuViewModel() { }
 
@@ -34,6 +36,8 @@ namespace Model
             outModel.ParentCode = ParentCode;
             outModel.MenuLevel = MenuLevel;
             outModel.BussType = BussType;
+            outModel.Controller = Controller;
+            outModel.Action = Action;
             return outModel;
         }
         public System.Guid ID { get; set; }
@@ -45,5 +49,10 @@ namespace Model
         public string ParentCode { get; set; }
         public Nullable<int> MenuLevel { get; set; }
         public string BussType { get; set; }
+        public string Controller { get; set; }
+        public string Action { get; set; }
+
+
+
     }
 }

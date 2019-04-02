@@ -10,9 +10,10 @@ namespace Common.BaseClass
     public class BaseController : Controller
     {
         public static BLL.Menu menuBLL = new BLL.Menu();
+        public static List<Model.MenuViewModel> menuData = menuBLL.GetMenuList();
         public BaseController()
         {
-            ViewBag.MenuList = menuBLL.GetMenuList();
+            ViewBag.MenuList = menuData;
         }   
     }
 }

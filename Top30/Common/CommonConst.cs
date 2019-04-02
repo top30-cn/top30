@@ -11,7 +11,7 @@ namespace Common
     }
     public struct IsEnabled
     {
-        public const string Y = "Y";
-        public const string N = "N";
+        public const string Y = "1";
+        public const string N = "0";
     }
 }

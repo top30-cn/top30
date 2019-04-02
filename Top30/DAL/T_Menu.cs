@@ -23,5 +23,7 @@ namespace DAL
         public string ParentCode { get; set; }
         public Nullable<int> MenuLevel { get; set; }
         public string BussType { get; set; }
+        public string Controller { get; set; }
+        public string Action { get; set; }
     }
 }

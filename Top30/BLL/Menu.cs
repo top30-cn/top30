@@ -16,8 +16,13 @@ namespace BLL
         }
         public List<MenuViewModel> GetMenuList()
         {
-            return DBBase.SingDBContext.T_Menu.Where(m => m.IsEnabled == Common.IsEnabled.Y)
-                .Select(m => new MenuViewModel(m)).ToList();
+            List<T_Menu> modelList = DBBase.SingDBContext.T_Menu.Where(m => m.IsEnabled == Common.IsEnabled.Y).ToList();
+            List<MenuViewModel> menuViewList = new List<MenuViewModel>();
+            foreach (var m in modelList)
+            {
+                menuViewList.Add(new MenuViewModel(m));
+            }
+            return menuViewList;
         }
     }
 }
