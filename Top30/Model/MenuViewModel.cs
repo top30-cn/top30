@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class MenuViewModel : Model.IDbModelBase<T_Menu>
+    public class MenuViewModel : BaseModelExpand<MenuViewModel, T_Menu>//Model.IDbModelBase<T_Menu>
     {
         public MenuViewModel(T_Menu t)
         {
