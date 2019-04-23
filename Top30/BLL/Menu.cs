@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using static AutoMapper.Mapper;
 namespace BLL
 {
     public class Menu
@@ -20,7 +20,7 @@ namespace BLL
             List<MenuViewModel> menuViewList = new List<MenuViewModel>();
             foreach (var m in modelList)
             {
-                menuViewList.Add(new MenuViewModel(m));
+                menuViewList.Add(Map<MenuViewModel>(m));
             }
             return menuViewList;
         }

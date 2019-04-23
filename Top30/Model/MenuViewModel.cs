@@ -7,39 +7,10 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class MenuViewModel : BaseModelExpand<MenuViewModel, T_Menu>//Model.IDbModelBase<T_Menu>
+    public class MenuViewModel
     {
-        public MenuViewModel(T_Menu t)
-        {
-            Name = t.Name;
-            Code = t.Code;
-            IsEnabled = t.IsEnabled;
-            AddTime = t.AddTime;
-            UpdateTime = t.UpdateTime;
-            ParentCode = t.ParentCode;
-            MenuLevel = t.MenuLevel;
-            BussType = t.BussType;
-            Controller = t.Controller;
-            Action = t.Action;
-        }
-        public MenuViewModel() { }
 
-        public T_Menu getDBModel()
-        {
-            T_Menu outModel = new T_Menu();
-            outModel.ID = ID;
-            outModel.Name = Name;
-            outModel.Code = Code;
-            outModel.IsEnabled = IsEnabled;
-            outModel.AddTime = AddTime;
-            outModel.UpdateTime = UpdateTime;
-            outModel.ParentCode = ParentCode;
-            outModel.MenuLevel = MenuLevel;
-            outModel.BussType = BussType;
-            outModel.Controller = Controller;
-            outModel.Action = Action;
-            return outModel;
-        }
+        public MenuViewModel() { }
         public System.Guid ID { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
