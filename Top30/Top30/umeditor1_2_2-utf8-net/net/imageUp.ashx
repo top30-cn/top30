@@ -1,12 +1,12 @@
 <%@ WebHandler Language="C#" Class="imageUp" %>
-<%@ Assembly Src="Uploader.cs" %>
+
 
 using System;
 using System.Web;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-
+using zdy;
 public class imageUp : IHttpHandler
 {
 
@@ -20,7 +20,7 @@ public class imageUp : IHttpHandler
 
         string callback = context.Request["callback"];
         string editorId = context.Request["editorid"];
-
+            //<%--@ Assembly Src="Uploader.cs" --%>
         //上传图片
         Hashtable info;
         Uploader up = new Uploader();

@@ -26,6 +26,16 @@ namespace Top30
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/umeditor/config").Include(
+            "~/umeditor1_2_2-utf8-net/umeditor.config.js"));
+            bundles.Add(new ScriptBundle("~/umeditor/umeditor").Include(
+            "~/umeditor1_2_2-utf8-net/umeditor.js"));
+            bundles.Add(new ScriptBundle("~/umeditor/lang").Include(
+            "~/umeditor1_2_2-utf8-net/lang/zh-cn/zh-cn.js"));
+
+            //       < script type = "text/javascript" charset = "utf-8" src = "~/umeditor1_2_2-utf8-net/umeditor.config.js" ></ script >
+            //< script type = "text/javascript" charset = "utf-8" src = "~/umeditor1_2_2-utf8-net/umeditor.js" ></ script >
+            //     < script type = "text/javascript" src = "~/umeditor1_2_2-utf8-net/lang/zh-cn/zh-cn.js" ></ script >
         }
     }
 }

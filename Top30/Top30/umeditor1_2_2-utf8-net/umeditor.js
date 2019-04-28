@@ -4,7 +4,7 @@
  * build: Wed Mar 19 2014 17:08:14 GMT+0800 (中国标准时间)
  */
 
-(function($){
+(sfunction($){
 
 UMEDITOR_CONFIG = window.UMEDITOR_CONFIG || {};
 
