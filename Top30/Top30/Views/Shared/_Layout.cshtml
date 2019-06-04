@@ -7,6 +7,20 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <link href="themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <script src="~/umeditor1_2_2-utf8-net/third-party/jquery.min.js"></script>
+    <script src="~/umeditor1_2_2-utf8-net/umeditor.config.js" charset="utf-8"></script>
+    <script src="~/umeditor1_2_2-utf8-net/umeditor.min.js"></script>
+    <script src="~/umeditor1_2_2-utf8-net/lang/zh-cn/zh-cn.js"></script>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/umeditor/config")
+        @Scripts.Render("~/umeditor/umeditor")
+        @Scripts.Render("~/umeditor/lang")*@
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -33,15 +47,8 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - 津ICP备18005792号-1</p>
         </footer>
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/umeditor/config")
-    @Scripts.Render("~/umeditor/umeditor")
-    @Scripts.Render("~/umeditor/lang")
-    @*@Scripts.Render("~/bundles/jquery")*@
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
 </html>
